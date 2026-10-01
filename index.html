@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Certified AI User Framework</title>
-<meta name="description" content="A click-through story on how any enterprise can design, launch, and scale a Certified AI User Framework across Microsoft AI, from a universal Responsible AI Pledge to six governed maker tracks." />
+<title>The Certified AI Maker Framework</title>
+<meta name="description" content="A click-through story on how any enterprise can design, launch, and scale a Certified AI Maker Framework across Microsoft AI, from a universal Responsible AI Pledge to six governed maker tracks." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%9B%A1%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 <style>
   :root{
@@ -138,7 +138,10 @@
 
   /* stat tiles */
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media (max-width:820px){.tiles{grid-template-columns:1fr}}
+  .tiles.four{grid-template-columns:repeat(4,1fr);gap:14px}
+  .tiles.four .tile{padding:18px 16px}
+  .tiles.four .tile b{font-size:clamp(28px,3.4vw,42px)}
+  @media (max-width:820px){.tiles{grid-template-columns:1fr}.tiles.four{grid-template-columns:repeat(2,1fr)}}
   .tile{background:var(--bg2);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:16px;padding:22px;text-align:center}
   .tile b{display:block;font-size:clamp(34px,5vw,52px);font-weight:800;color:var(--accent);letter-spacing:-.03em}
   .tile h3{margin:8px 0 6px}.tile p{margin:0 auto;color:var(--dim);font-size:14px}
@@ -178,7 +181,7 @@
 <body>
 
 <div class="top">
-  <a class="brand" href="#1">Certified <span>AI User</span> Framework</a>
+  <a class="brand" href="#1">Certified <span>AI Maker</span> Framework</a>
   <span class="ms" aria-hidden="true"><i style="background:#f25022"></i><i style="background:#7fba00"></i><i style="background:#00a4ef"></i><i style="background:#ffb900"></i></span>
 </div>
 
@@ -190,7 +193,7 @@
       <div class="cover">
         <div class="lft">
           <span class="tagpill">A Microsoft working session</span>
-          <h1>The Certified <span class="grad">AI User</span> Framework</h1>
+          <h1>The Certified <span class="grad">AI Maker</span> Framework</h1>
           <p class="lede">How to design, launch, and scale a formal, governed path that takes any employee from responsible AI user to trusted maker, across Power Apps, Copilot Studio, M365 Copilot, and beyond.</p>
           <p class="dim" style="font-size:14px;margin-top:14px">Jake Gardner &nbsp;|&nbsp; Microsoft AI Business Solutions</p>
         </div>
@@ -212,7 +215,7 @@
   <section class="slide" data-sec="Open" data-t="The tension">
     <div class="in-s">
       <p class="kicker">Somewhere in your tenant, right now</p>
-      <h2>An employee you have never met is building something that <span class="red">touches member data.</span></h2>
+      <h2>An employee you have never met is <span class="red">building something you cannot see.</span></h2>
       <p class="lede f" style="max-width:none;margin-top:14px">You do not know their name. That is not a hypothetical. That is this afternoon.</p>
       <p class="lede f">The instinct is to lock it down. For the next few minutes, I am going to argue that locking it down is the most dangerous thing you could do, and show you what to do instead.</p>
     </div>
@@ -225,7 +228,7 @@
       <div class="two">
         <div>
           <h2>The maker you <span class="grad">have not met yet.</span></h2>
-          <p class="lede f">Maria works in one of your business units. She is not a developer. But she sees a manual, error prone process her team repeats every week, and she knows Power Platform can fix it.</p>
+          <p class="lede f">Maria works in one of your business units. She is not a developer. But she sees a manual, error prone process her team repeats every week, and she knows automation technology can fix it.</p>
           <p class="lede f">Right now Maria has two paths. She can wait in a queue and navigate an unfamiliar process, or she can just build it herself, quietly, the way thousands of employees already do.</p>
           <p class="lede f" style="color:var(--ink)"><b>One path creates value. The other creates the exact risk we just named. The whole question of today is which path your enterprise makes easy.</b></p>
         </div>
@@ -240,14 +243,15 @@
   <!-- 4 PROOF -->
   <section class="slide" data-sec="Open" data-t="Proof at scale">
     <div class="in-s">
-      <p class="kicker">By the numbers</p>
-      <h2>And here is the proof the <span class="grad">better path works.</span></h2>
-      <div class="tiles" style="margin-top:24px">
-        <div class="tile f"><b>56M+</b><h3>Power Platform monthly active users</h3><p>Up about 27 percent year over year, Microsoft FY25 Q3.</p></div>
-        <div class="tile f"><b>500+</b><h3>Production apps at Deutsche Bahn</h3><p>Built by 4,000+ citizen developers under a dual level CoE.</p></div>
-        <div class="tile f"><b>Fewer</b><h3>Security incidents in regulated sectors</h3><p>After structured guardrails. Illustrative; adapt to your risk profile.</p></div>
+      <p class="kicker">By the numbers, and all of it public</p>
+      <h2>The building is already happening, <span class="grad">everywhere at once.</span></h2>
+      <div class="tiles four" style="margin-top:22px">
+        <div class="tile f"><b>56M+</b><h3>Power Apps &amp; Automate</h3><p>Monthly active Power Platform makers, up 27 percent year over year.</p></div>
+        <div class="tile f"><b>1M+</b><h3>M365 Copilot Agent Builder</h3><p>Custom agents built across SharePoint and Copilot Studio in a single quarter, up 130 percent quarter over quarter.</p></div>
+        <div class="tile f"><b>90%</b><h3>Copilot Studio agents</h3><p>Of the Fortune 500 have already used Copilot Studio, 230,000+ organizations in all.</p></div>
+        <div class="tile f"><b>3X</b><h3>M365 Copilot Cowork</h3><p>Year over year growth in Microsoft 365 Copilot customers, the surface where Cowork runs.</p></div>
       </div>
-      <p class="lede f" style="margin-top:20px;max-width:none">Deutsche Bahn is a published Microsoft case study, not our claim. Thousands of makers, hundreds of production apps, in a regulated, safety critical industry. This works precisely where the stakes are highest.</p>
+      <p class="lede f" style="margin-top:20px;max-width:none">Every figure here is public, from Microsoft's FY25 Q3 earnings. And Deutsche Bahn, a published Microsoft case study, shows the same pattern where the stakes are highest: 4,000+ makers and 500+ production apps in a regulated, safety critical industry, under a dual level CoE.</p>
     </div>
   </section>
 
@@ -259,7 +263,7 @@
       <p class="lede" style="max-width:none">Every enterprise resolves Maria's two paths one of two ways. There is no third option where nothing gets built. That ship has sailed. The only real choice is whether the building happens with you, or around you.</p>
       <div class="cmp2" style="margin-top:22px">
         <div class="col bad f"><h3 class="dim">Without a framework</h3><p>Shadow IT, untracked data flows, orphaned apps, blocked connector incidents, and a CoE buried in one off requests.</p></div>
-        <div class="col good f"><h3 class="grad">With the Certified AI User Framework</h3><p>Vetted makers, contained blast radius, traceable deployments, and a CoE that sets the rules of the road rather than approving every app.</p></div>
+        <div class="col good f"><h3 class="grad">With the Certified AI Maker Framework</h3><p>Vetted makers, contained blast radius, traceable deployments, and a CoE that sets the rules of the road rather than approving every app.</p></div>
       </div>
     </div>
   </section>
@@ -269,7 +273,7 @@
     <div class="in-s">
       <p class="kicker">Start here, before anyone builds anything</p>
       <h2>One Pledge. <span class="grad">Every employee.</span></h2>
-      <p class="lede" style="max-width:none">Before we talk about makers, let's talk about everyone. Shadow AI is the new shadow IT. Anyone can paste member data into a chatbot, whether or not they ever build a single app. So the first move is not a training path. It is an attestation.</p>
+      <p class="lede" style="max-width:none">Before we talk about makers, let's talk about everyone. Shadow AI is the new shadow IT. Anyone can paste customer data into a chatbot, whether or not they ever build a single app. So the first move is not a training path. It is an attestation.</p>
       <div class="pledge f">
         <div class="lbl">The Responsible AI Pledge</div>
         <div class="q">"I commit to using AI responsibly: respecting company data policies, keeping sensitive information out of unapproved tools, and following the guidelines provided."</div>
