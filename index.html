@@ -115,6 +115,9 @@
   .mtx tbody td:first-child{font-weight:700;color:var(--ink)}
   .mtx td{color:var(--dim)}
   .mtx .none{color:var(--faint)}
+  .mtx a{color:var(--accent);text-decoration:none;font-weight:600;white-space:nowrap}
+  .mtx a:hover{text-decoration:underline}
+  .mtx a:after{content:" \2197";font-size:11px;opacity:.7}
   .mtx tbody tr:hover td{background:rgba(47,155,255,.05)}
   .b-b{color:var(--bronze)}.b-s{color:var(--silver)}.b-g{color:var(--gold)}
 
@@ -335,19 +338,19 @@
     <div class="in-s">
       <p class="kicker">How the learning maps</p>
       <h2>The checkpoint at <span class="grad">each rung.</span></h2>
-      <p class="lede" style="max-width:none">Each cell names the smallest concrete thing a maker does to earn that rung, drawn straight from free Microsoft resources. The dashes are deliberate, not gaps.</p>
+      <p class="lede" style="max-width:none">Each cell names the smallest concrete thing a maker does to earn that rung, drawn straight from free Microsoft resources. The last column links to where that learning lives. The blanks are deliberate, not gaps.</p>
       <table class="mtx f">
-        <thead><tr><th>Track</th><th>Bronze</th><th>Silver</th><th>Gold</th></tr></thead>
+        <thead><tr><th>Track</th><th>Bronze</th><th>Silver</th><th>Gold</th><th>Learn at</th></tr></thead>
         <tbody>
-          <tr><td>Agent Builder</td><td class="b-b">Declarative agent, Copilot Camp</td><td class="b-s">SharePoint grounded, team</td><td class="b-g">Actions + Agent 365</td></tr>
-          <tr><td>Copilot Cowork</td><td class="b-b">Delegate a task, MCS Labs</td><td class="b-s">Multi-step, human in loop</td><td class="none">not a build product</td></tr>
-          <tr><td>Autonomous (AI Autopilots)</td><td class="none">prereq: Silver</td><td class="b-s">Triggered + guardrails</td><td class="b-g">Autonomous + observability</td></tr>
-          <tr><td>Copilot Studio</td><td class="b-b">Recruit</td><td class="b-s">Operative, plus harness choice</td><td class="b-g">Commander + GitHub Copilot</td></tr>
-          <tr><td>Power Apps</td><td class="b-b">PL-900 + App in a Day</td><td class="b-s">Dataverse + ALM basics</td><td class="b-g">Architecture + PL-400</td></tr>
-          <tr><td>Pro-code</td><td class="none">n/a</td><td class="none">n/a</td><td class="b-g">AI Foundry or GitHub Copilot + custom engine</td></tr>
+          <tr><td>Agent Builder</td><td class="b-b">Declarative agent</td><td class="b-s">SharePoint grounded, team</td><td class="b-g">Actions + Agent 365</td><td><a href="https://microsoft.github.io/copilot-camp/" target="_blank" rel="noopener">Copilot Camp</a></td></tr>
+          <tr><td>Copilot Cowork</td><td class="b-b">Delegate a task</td><td class="b-s">Multi-step, human in loop</td><td class="none">not a build product</td><td><a href="https://microsoft.github.io/agent-academy/cowork-collective/" target="_blank" rel="noopener">Cowork Collective</a></td></tr>
+          <tr><td>Autonomous (AI Autopilots)</td><td class="none">prereq: Silver</td><td class="b-s">Triggered + guardrails</td><td class="b-g">Autonomous + observability</td><td><a href="https://microsoft.github.io/mcs-labs/" target="_blank" rel="noopener">MCS Labs</a></td></tr>
+          <tr><td>Copilot Studio</td><td class="b-b">Recruit</td><td class="b-s">Operative, plus harness choice</td><td class="b-g">Commander + GitHub Copilot</td><td><a href="https://microsoft.github.io/agent-academy/" target="_blank" rel="noopener">Agent Academy</a></td></tr>
+          <tr><td>Power Apps</td><td class="b-b">PL-900 + App in a Day</td><td class="b-s">Dataverse + ALM basics</td><td class="b-g">Architecture + PL-400</td><td><a href="https://microsoft.github.io/power-platform-resources/" target="_blank" rel="noopener">Power Platform Resources</a></td></tr>
+          <tr><td>Pro-code</td><td class="none">n/a</td><td class="none">n/a</td><td class="b-g">AI Foundry or GitHub Copilot + custom engine</td><td><a href="https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/" target="_blank" rel="noopener">Microsoft Foundry</a></td></tr>
         </tbody>
       </table>
-      <p class="dim f" style="font-size:13.5px;margin-top:12px;max-width:none">Every track sits on the universal Responsible AI Pledge. Sources: Agent Academy, Power Platform Resources, Copilot Developer Camp, MCS Labs, Agent 365, AI Skills Navigator. The harness choice, standard versus GitHub Copilot, appears at Silver and Gold.</p>
+      <p class="dim f" style="font-size:13.5px;margin-top:12px;max-width:none">In the Copilot Studio Agent Academy, Recruit, Operative, and Commander are the progressive lesson tiers, beginner to advanced, which is why they map cleanly to Bronze, Silver, and Gold. Every track sits on the universal Responsible AI Pledge, and the harness choice, standard versus GitHub Copilot, appears at Silver and Gold.</p>
     </div>
   </section>
 
