@@ -176,6 +176,11 @@
   .z-y .zh{background:#e3a81f}.z-y{border-color:rgba(227,168,31,.45)}
   .z-r .zh{background:#e5675f}.z-r{border-color:rgba(229,103,95,.45)}
   .principle{margin-top:16px;background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:13px 18px;font-size:14.5px;color:var(--ink);line-height:1.45;max-width:none}
+  .moves{max-width:780px;margin:22px auto 0;display:flex;flex-direction:column;gap:12px;text-align:left}
+  .mv{display:flex;gap:14px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+  .mv .mvn{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#04121f;font-weight:800;display:grid;place-items:center;font-size:15px}
+  .mv .mvt{font-size:15.5px;color:var(--dim);line-height:1.42}
+  .mv .mvt b{color:var(--ink)}
   .tile{background:var(--bg2);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:16px;padding:22px;text-align:center}
   .tile b{display:block;font-size:clamp(34px,5vw,52px);font-weight:800;color:var(--accent);letter-spacing:-.03em}
   .tile h3{margin:8px 0 6px}.tile p{margin:0 auto;color:var(--dim);font-size:14px}
@@ -259,17 +264,21 @@
   <section class="slide" data-sec="Open" data-t="Meet Maria">
     <div class="in-s">
       <p class="kicker">Meet Maria</p>
-      <div class="two">
+      <div class="two" style="align-items:start">
         <div>
           <h2>The maker you <span class="grad">have not met yet.</span></h2>
           <p class="lede f">Maria works in one of your business units. She is not a developer. But she sees a manual, error prone process her team repeats every week, and she knows automation technology can fix it.</p>
           <p class="lede f">Right now Maria has two paths. She can wait in a queue and navigate an unfamiliar process, or she can just build it herself, quietly, the way thousands of employees already do.</p>
-          <p class="lede f" style="color:var(--ink)"><b>One path creates value. The other creates the exact risk we just named. The whole question of today is which path your enterprise makes easy.</b></p>
+          <p class="lede f" style="color:var(--ink)"><b>There is no third path where nothing gets built. That ship has sailed. The only question is whether the building happens with you, or around you.</b></p>
         </div>
         <div class="persona f">
           <div class="avatar">&#128105;&#8205;&#128187;</div>
           <div class="thought">"I could fix this in an afternoon. I just need somewhere safe to build it."</div>
         </div>
+      </div>
+      <div class="cmp2 f" style="margin-top:22px">
+        <div class="col bad"><h3 class="dim">Without a framework</h3><p>Shadow IT, untracked data flows, orphaned apps and agents, blocked connector incidents, and a CoE buried in one off requests.</p></div>
+        <div class="col good"><h3 class="grad">With the Certified AI Maker Framework</h3><p>Vetted makers, contained blast radius, traceable deployments, and a CoE that sets the rules of the road rather than approving every app and agent.</p></div>
       </div>
     </div>
   </section>
@@ -289,20 +298,7 @@
     </div>
   </section>
 
-  <!-- 5 THE TENSION -->
-  <section class="slide" data-sec="Open" data-t="Two ways to resolve it">
-    <div class="in-s">
-      <p class="kicker">Why this, why now</p>
-      <h2>The tension you are <span class="grad">already living.</span></h2>
-      <p class="lede" style="max-width:none">Every enterprise resolves Maria's two paths one of two ways. There is no third option where nothing gets built. That ship has sailed. The only real choice is whether the building happens with you, or around you.</p>
-      <div class="cmp2" style="margin-top:22px">
-        <div class="col bad f"><h3 class="dim">Without a framework</h3><p>Shadow IT, untracked data flows, orphaned apps and agents, blocked connector incidents, and a CoE buried in one off requests.</p></div>
-        <div class="col good f"><h3 class="grad">With the Certified AI Maker Framework</h3><p>Vetted makers, contained blast radius, traceable deployments, and a CoE that sets the rules of the road rather than approving every app and agent.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6 UNIVERSAL PLEDGE -->
+  <!-- 5 UNIVERSAL PLEDGE -->
   <section class="slide" data-sec="The Pledge" data-t="One pledge, every employee">
     <div class="in-s">
       <p class="kicker">Start here, before anyone builds anything</p>
@@ -419,7 +415,7 @@
     <div class="in-s">
       <p class="kicker">Building your program, decision 1</p>
       <h2>Design your <span class="grad">ladder.</span></h2>
-      <p class="lede" style="max-width:none">The method is one question, asked four times: what is the smallest privilege we can safely grant, and what does someone have to prove before we grant more? That single question produces the entire ladder.</p>
+      <p class="lede" style="max-width:none">You already saw the ladder. Here it is as a working spec. One question builds every rung: what is the smallest privilege we can safely grant, and what must someone prove before we grant more? These times and environments are a defensible starting point, not gospel.</p>
       <table class="mtx f" style="margin-top:12px">
         <thead><tr><th>Level</th><th>Typical time</th><th>Power Apps &amp; Automate</th><th>Copilot Studio</th></tr></thead>
         <tbody>
@@ -429,7 +425,7 @@
           <tr><td>Gold</td><td>6 to 12 mo</td><td>Production deployment, champion role</td><td>Production agents, public web with sign-off</td></tr>
         </tbody>
       </table>
-      <p class="dim f" style="font-size:13.5px;margin-top:12px">For a regulated payer, these are a defensible starting point, not gospel. Keep Bronze narrower and Silver to Gold reviews stricter if your risk profile calls for it.</p>
+      <p class="dim f" style="font-size:13.5px;margin-top:12px">For a regulated payer, keep Bronze narrower and Silver to Gold reviews stricter if your risk profile calls for it.</p>
     </div>
   </section>
 
@@ -617,14 +613,19 @@
     </div>
   </section>
 
-  <!-- 23 CLOSE -->
-  <section class="slide" data-sec="It starts with you" data-t="You don't need permission">
+  <!-- CLOSE -->
+  <section class="slide" data-sec="It starts with you" data-t="Your next three moves">
     <div class="in-s center">
       <p class="kicker">The close</p>
       <h1 class="oneline">You do not need <span class="grad">permission to start.</span></h1>
-      <p class="lede f">You do not need a budget cycle, a new platform, or anyone's sign-off. You need one business unit, one sponsor, and the willingness to say "yes, safely" instead of "no." You can run all five of these decisions yourselves.</p>
-      <p class="lede f" style="color:var(--ink)"><b>Microsoft does not make this happen for you. We make your first 90 days faster, and keep you from re-learning what others already learned the hard way. The pen is yours. So is the next Maria.</b></p>
-      <p class="dim f" style="margin-top:18px;font-size:14px">Jake Gardner &nbsp;|&nbsp; Microsoft AI Business Solutions &nbsp;|&nbsp; jakegardner@microsoft.com</p>
+      <p class="lede f" style="margin:0 auto">No budget cycle, no new platform, no one's sign-off. Just one sponsor and the willingness to say "yes, safely." Here is where you start.</p>
+      <div class="moves f">
+        <div class="mv"><span class="mvn">1</span><div class="mvt"><b>Book the one-hour meeting.</b> Four people, a CoE lead, a security partner, an IT-ops partner, and a business sponsor, agree on the tiers and tracks.</div></div>
+        <div class="mv"><span class="mvn">2</span><div class="mvt"><b>Host a buildathon this quarter.</b> This is your entry gateway. Real use cases in, purposeful and governed makers out.</div></div>
+        <div class="mv"><span class="mvn">3</span><div class="mvt"><b>Bring Microsoft in alongside you.</b> We make your first 90 days faster and keep you from re-learning what others already learned the hard way.</div></div>
+      </div>
+      <p class="lede f" style="color:var(--ink);margin:20px auto 0"><b>The pen is yours. So is the next Maria.</b></p>
+      <p class="dim f" style="margin-top:16px;font-size:14px">Jake Gardner &nbsp;|&nbsp; Microsoft AI Business Solutions &nbsp;|&nbsp; jakegardner@microsoft.com</p>
     </div>
   </section>
 
