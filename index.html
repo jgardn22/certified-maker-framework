@@ -408,7 +408,7 @@
         <div class="card f"><h3>2 &middot; Design your access architecture</h3><p>Which environment a maker builds in at each level, and the gates before Novice even begins.</p></div>
         <div class="card f"><h3>3 &middot; Commit to service levels</h3><p>Turn governance from a black box into a service with published SLAs.</p></div>
         <div class="card f"><h3>4 &middot; Define the certification lifecycle</h3><p>Treat certification as a status you can suspend or revoke, not a one time milestone.</p></div>
-        <div class="card f"><h3>5 &middot; Add agent-specific governance</h3><p>Copilot Studio's risk surface, and its shared credit pool, need their own controls.</p></div>
+        <div class="card f"><h3>5 &middot; Govern how agents go live</h3><p>The gate an agent clears before it is published to real users: knowledge, reach, safety, and cost.</p></div>
       </div>
       <p class="lede f" style="margin-top:18px;max-width:none">These five decisions are the work of standing up a CoE. Everything before this was concept. Everything from here is construction.</p>
     </div>
@@ -509,18 +509,18 @@
   </section>
 
   <!-- 17 DECISION 5 -->
-  <section class="slide" data-sec="Building your program" data-t="Decision 5: agent governance">
+  <section class="slide" data-sec="Building your program" data-t="Decision 5: how agents go live">
     <div class="in-s">
       <p class="kicker">Building your program, decision 5</p>
-      <h2>Add agent-specific <span class="grad">governance.</span></h2>
-      <p class="lede" style="max-width:none">The first four decisions work for every track. This is the deliberate exception. An agent does not fail with a broken formula you can see. It fails by hallucinating or oversharing, quietly and plausibly. That one difference earns agents a single extra layer, four controls that answer four questions.</p>
+      <h2>Govern how agents <span class="grad">go live.</span></h2>
+      <p class="lede" style="max-width:none"><b>The decision:</b> define one extra gate an agent must clear before it is published to real users. <b>Why it matters:</b> an app fails with a broken formula you can see, but an agent's risk shows up the moment it goes live. It can reach people, ground on real data, take real actions, and draw on a shared credit pool, and it fails quietly by hallucinating or oversharing. So before any agent is published, it clears four checks.</p>
       <div class="grid g4" style="margin-top:18px">
         <div class="card f"><h3>Knowledge &middot; what it knows</h3><p>One approved list of sources an agent may ground on, reviewed quarterly for drift.</p></div>
-        <div class="card f"><h3>Reach &middot; where it goes</h3><p>Test canvas for Bronze, broader internal for Silver, public web with elevated sign-off for Gold.</p></div>
+        <div class="card f"><h3>Reach &middot; who it reaches</h3><p>Test canvas for Bronze, broader internal for Silver, public web with elevated sign-off for Gold.</p></div>
         <div class="card f"><h3>Safety &middot; is it sound</h3><p>Grounding documented, adversarial prompts tested, fallback defined, human handoff configured.</p></div>
         <div class="card f"><h3>Cost &middot; what it burns</h3><p>Assign a capacity tier at plan time and monitor burn rate. The Copilot Credit pool is shared and finite.</p></div>
       </div>
-      <p class="dim f" style="font-size:13.5px;margin-top:16px">Knowledge, Reach, Safety, Cost. If an agent clears all four, it has earned its rung.</p>
+      <p class="principle f" style="margin-top:16px"><b>The outcome:</b> no agent reaches users on trust alone. Every published agent has a named owner, an approved knowledge boundary, a tested safety profile, and a funded capacity tier, matched to how far it can reach.</p>
     </div>
   </section>
 
