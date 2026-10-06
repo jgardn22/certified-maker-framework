@@ -181,6 +181,15 @@
   .mv .mvn{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#04121f;font-weight:800;display:grid;place-items:center;font-size:15px}
   .mv .mvt{font-size:15.5px;color:var(--dim);line-height:1.42}
   .mv .mvt b{color:var(--ink)}
+  .evid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:none}
+  @media (max-width:820px){.evid{grid-template-columns:1fr}}
+  .evcard{display:flex;gap:14px;align-items:center;text-decoration:none;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .15s,transform .15s}
+  .evcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .evcard .evic{flex:none;width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:18px;color:#fff}
+  .evcard.lk .evic{background:#0a66c2}
+  .evcard.vid .evic{background:#ff0000;font-size:16px}
+  .evcard .evlabel{display:block;color:var(--ink);font-weight:700;font-size:14.5px;line-height:1.25}
+  .evcard .evsub{display:block;color:var(--accent);font-size:12.5px;margin-top:3px;font-weight:600}
   .tile{background:var(--bg2);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:16px;padding:22px;text-align:center}
   .tile b{display:block;font-size:clamp(34px,5vw,52px);font-weight:800;color:var(--accent);letter-spacing:-.03em}
   .tile h3{margin:8px 0 6px}.tile p{margin:0 auto;color:var(--dim);font-size:14px}
@@ -525,14 +534,24 @@
     <div class="in-s">
       <p class="kicker">Bringing makers along</p>
       <h2>The easiest on-ramp is a <span class="grad">buildathon.</span></h2>
-      <p class="lede" style="max-width:none">Most CoEs treat buildathons as high risk. The opposite is true. AI use cases that do not help the company improve margin are just AI hobbies. A buildathon replaces hobbies with purpose: it creates shared ownership, and because makers build in a personal development environment, a correctly governed program carries no enterprise risk. What it really does is point AI tokens and build effort at real business problems.</p>
-      <div class="grid g4" style="margin-top:18px">
+      <p class="lede" style="max-width:none">Most CoEs treat buildathons as high risk. The opposite is true. AI use cases that do not help the company improve margin are just AI hobbies. A buildathon replaces hobbies with purpose, and because makers build in a personal development environment, a correctly governed program carries no enterprise risk. It points AI tokens and build effort at real business problems.</p>
+      <div class="grid g4" style="margin-top:16px">
         <div class="card f"><h3>They arrive with intent</h3><p>Makers show up with a specific use case, a real business problem they already want to solve.</p></div>
         <div class="card f"><h3>A reason to enroll</h3><p>That purpose gives them a reason to request a license and to actually finish the certified maker training.</p></div>
         <div class="card f"><h3>An agent with an outcome</h3><p>What they build has an intended business outcome. That is where the real value unlock happens.</p></div>
         <div class="card f"><h3>Value at the source</h3><p>You surface business challenges straight from the business lines, with no enterprise exposure.</p></div>
       </div>
-      <p class="principle f" style="margin-top:16px"><b>So host your own.</b> A CoE that runs or endorses buildathons owns the entry gateway to the certified maker pathway, and turns scattered curiosity into purposeful, governed building.</p>
+      <p class="dim f" style="font-size:13px;margin-top:16px;margin-bottom:10px"><b style="color:var(--ink)">So host your own.</b> See it in the real world: Sutter Health ran one, and their CEO wrote about it.</p>
+      <div class="evid f">
+        <a class="evcard lk" href="https://lnkd.in/p/ghKCM8AP" target="_blank" rel="noopener">
+          <span class="evic">in</span>
+          <span><span class="evlabel">Sutter Health's CEO on their AI buildathon</span><span class="evsub">Read the LinkedIn post &rarr;</span></span>
+        </a>
+        <a class="evcard vid" href="https://www.youtube.com/watch?v=h6nHH2j0N_I" target="_blank" rel="noopener">
+          <span class="evic">&#9654;</span>
+          <span><span class="evlabel">Watch: Sutter Health AI Hackathon</span><span class="evsub">See a buildathon in action &rarr;</span></span>
+        </a>
+      </div>
     </div>
   </section>
 
