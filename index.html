@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b0f17" />
 <title>The Certified AI Maker Framework</title>
 <meta name="description" content="A click-through story on how any enterprise can design, launch, and scale a Certified AI Maker Framework across Microsoft AI, from a universal Responsible AI Pledge to six governed maker tracks." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%9B%A1%EF%B8%8F%3C/text%3E%3C/svg%3E" />
@@ -32,7 +33,7 @@
   .top .brand span{color:var(--accent)}
   .top .ms{margin-left:auto;display:flex;gap:4px;opacity:.85}
   .top .ms i{width:9px;height:9px;display:block}
-  .bar{position:fixed;left:0;right:0;bottom:0;height:var(--bar);z-index:20;display:flex;align-items:center;gap:12px;
+  .bar{position:fixed;left:0;right:0;bottom:0;height:calc(var(--bar) + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);z-index:20;display:flex;align-items:center;gap:12px;
        padding:0 16px;background:rgba(11,15,23,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
   .bar button{background:var(--bg3);border:1px solid var(--line);color:var(--ink);border-radius:9px;
        padding:8px 14px;font:600 13px var(--sans);cursor:pointer}
@@ -69,7 +70,7 @@
   .nav .sec button.cur{background:#132840;color:var(--ink);font-weight:600}
 
   /* ---------- slides ---------- */
-  .deck{position:fixed;top:0;left:0;right:0;bottom:var(--bar)}
+  .deck{position:fixed;top:0;left:0;right:0;bottom:calc(var(--bar) + env(safe-area-inset-bottom,0px))}
   .slide{position:absolute;inset:0;overflow-y:auto;padding:66px 30px 34px;display:flex;
          opacity:0;visibility:hidden;transform:translateX(28px);transition:opacity .45s,transform .45s,visibility .45s}
   .slide.on{opacity:1;visibility:visible;transform:none}
@@ -235,9 +236,8 @@
   .chk li i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#04121f;display:grid;place-items:center;font-weight:800;font-size:14px;font-style:normal}
 
   /* cover */
-  .cover{display:grid;grid-template-columns:1.15fr .85fr;min-height:100%}
-  @media (max-width:900px){.cover{grid-template-columns:1fr}.cover .panel{display:none}}
-  .cover .lft{display:flex;flex-direction:column;justify-content:center;padding-right:20px}
+  .cover{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);min-height:100%}
+  .cover .lft{display:flex;flex-direction:column;justify-content:center;padding-right:20px;min-width:0}
   .cover .panel{background:var(--accent);border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;margin:6px 0}
   .cover .tagpill{display:inline-block;background:var(--accent);color:#04121f;font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:18px;width:max-content}
   .panel .plad{display:flex;align-items:flex-end;gap:12px;height:230px}
@@ -251,6 +251,14 @@
   .peattr .pechip img{display:block;height:17px;width:auto}
   .peattr .petx{color:var(--dim);font-size:12px;line-height:1.35}
   .peattr:hover .petx{color:var(--ink)}
+
+  /* byline + microsoft mark (cover) */
+  .byline{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:14px;color:var(--dim)}
+  .byline a{color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--accent)}
+  .byline a:hover{color:var(--accent)}
+  .byline a:focus-visible,.peattr:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  .byline .msmark{display:flex;align-items:center;background:#fff;border-radius:8px;padding:5px 10px}
+  .byline .msmark img{display:block;height:22px;width:auto}
 
   /* subtle source note */
   .srcnote{margin-top:16px;font-size:12px;color:var(--faint);max-width:none}
@@ -284,6 +292,107 @@
   .outl{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px}
   .outl li{display:flex;gap:9px;font-size:14px;color:var(--dim);line-height:1.35}
   .outl li::before{content:"\2713";flex:none;color:var(--ok);font-weight:700}
+  .mtxhint{display:none;font-size:12.5px;color:var(--accent);margin:8px 0 0;font-weight:600}
+
+  /* ---------- mobile and touch (kept last so it wins the cascade) ---------- */
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  .deck,.slide{max-width:100vw}
+  .in-s,.two>*,.grid>*,.cover .lft{min-width:0}
+  h1,h2,h3,p,li,td,th,a{overflow-wrap:anywhere}
+
+  @media (max-width:900px){
+    .cover{grid-template-columns:minmax(0,1fr)}
+    .cover .panel{display:none}
+    .cover .lft{padding-right:0}
+  }
+
+  @media (max-width:760px){
+    body{font-size:16px}
+    .slide{padding:58px 18px 22px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+    .top{padding:0 16px}
+    h1{font-size:clamp(30px,9.2vw,44px);line-height:1.05}
+    h2{font-size:clamp(25px,7.4vw,34px);margin-bottom:14px}
+    .lede{font-size:16.5px}
+    .kicker{font-size:11px;letter-spacing:.14em}
+    .grid,.road,.two,.cmp2{gap:12px}
+    .card,.col,.ph,.tile{padding:15px}
+    .tile b{font-size:34px}
+
+    /* bottom chrome: bigger tap targets, show the progress count clearly */
+    .bar{gap:8px;padding:0 10px;height:var(--bar)}
+    .bar button{min-height:44px;min-width:44px;padding:10px 14px;font-size:14px}
+    .bar .count{margin-left:auto;font-size:13px;color:var(--dim)}
+    .bar #prev,.bar #next{flex:1;max-width:120px}
+
+    /* section navigator becomes a full-width sheet */
+    .nav{left:8px;right:8px;width:auto;bottom:calc(var(--bar) + 8px);max-height:calc(100dvh - var(--bar) - 70px)}
+    .nav .secs{grid-template-columns:1fr}
+    .nav .sec button{padding:11px 8px;font-size:15px}
+
+    /* ladder: stack the pledge gate above, rungs stay side by side but compact */
+    .ladder{flex-wrap:wrap;height:auto;gap:8px;align-items:flex-end;margin-top:16px}
+    .pgate{width:100%;height:auto;flex-direction:row;flex-wrap:wrap;gap:4px 12px;justify-content:flex-start;align-items:baseline;text-align:left;padding:12px 14px}
+    .pgate .toarr{display:none}
+    .pgate small{font-size:11px;white-space:nowrap}
+    .pgate b{margin:0;white-space:nowrap}
+    .pgate span:not(.toarr){font-size:12.5px;flex-basis:100%}
+    .rung{flex:1 1 calc(25% - 8px);min-width:0;padding:10px 4px 12px;border-radius:10px}
+    .rung[style*="34%"]{min-height:120px}.rung[style*="56%"]{min-height:150px}
+    .rung[style*="78%"]{min-height:180px}.rung[style*="100%"]{min-height:210px}
+    .rung b{font-size:14px}
+    .rung small{font-size:9.5px;letter-spacing:.03em;text-align:center;line-height:1.25}
+    .rung ul{font-size:10.5px;line-height:1.3;padding:0 2px}
+    .arrowline{font-size:12.5px;gap:8px}
+
+    /* matrix: keep the table intact and let it scroll sideways inside its own box */
+    .slide .mtx{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:normal}
+    .mtx{min-width:0;font-size:13px}
+    .mtx th,.mtx td{padding:9px 10px;min-width:104px}
+    .mtx td:first-child,.mtx th:first-child{min-width:112px;position:sticky;left:0;background:var(--bg2);z-index:1}
+    .mtx thead th:first-child{background:var(--bg3)}
+    .mtx a{white-space:normal}
+    .mtxhint{display:block}
+
+    /* zones: raise the smallest text */
+    .zone .lbl{font-size:11.5px}
+    .zone .val{font-size:14px}
+    .zone .zh{font-size:15px}
+
+    /* spine, chips, role lists: comfortable reading size */
+    .sstep .sd{font-size:12.5px}
+    .chip{font-size:13px;padding:7px 12px}
+    .role li,.brief li,.outl li,.blist li{font-size:14.5px}
+    .principle{font-size:14.5px;padding:12px 14px}
+    .srcnote{font-size:12.5px}
+
+    /* link cards: full width, comfortable to tap */
+    .daccel{flex-wrap:wrap;gap:10px}
+    .daccel .dgo{width:100%}
+    .qcard{padding:16px}
+    .qcard blockquote{font-size:15.5px}
+    .qcard .qlinks{flex-direction:column;gap:12px}
+    .qcard .qlinks a{padding:6px 0;font-size:14.5px}
+    .byline{gap:10px}
+    .peattr{flex-wrap:wrap;gap:8px}
+    .peattr .petx{font-size:12.5px}
+    .moves{margin-top:16px}
+    .mv{padding:12px 14px}
+    .mv .mvt{font-size:14.5px}
+  }
+
+  /* very small phones */
+  @media (max-width:380px){
+    .slide{padding:56px 14px 20px}
+    .bar #prev,.bar #next{max-width:96px;padding:10px 10px}
+    .rung small{font-size:8.5px}
+    .rung ul{font-size:9.5px}
+  }
+
+  /* touch devices: no hover-only affordances, visible focus for keyboard users */
+  @media (hover:none){
+    .evcard:hover,.daccel:hover{transform:none}
+  }
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -303,7 +412,10 @@
           <span class="tagpill">A Microsoft working session</span>
           <h1>The Certified <span class="grad">AI Maker</span> Framework</h1>
           <p class="lede">How to design, launch, and scale a formal, governed path that takes any employee from responsible AI user to trusted maker, across Power Apps, Copilot Studio, M365 Copilot, and beyond.</p>
-          <p class="dim" style="font-size:14px;margin-top:14px">Jake Gardner &nbsp;|&nbsp; Microsoft AI Business Solutions</p>
+          <div class="byline">
+            <span class="msmark"><img src="assets/microsoft-logo.png" alt="Microsoft" width="85" height="22" /></span>
+            <span><a href="https://www.linkedin.com/in/jake-gardner-24709054/" target="_blank" rel="noopener" aria-label="Jake Gardner on LinkedIn (opens in a new tab)">Jake Gardner</a> &nbsp;|&nbsp; Microsoft AI Business Solutions</span>
+          </div>
           <a class="peattr" href="https://www.productiveedge.com/" target="_blank" rel="noopener">
             <span class="pechip"><img src="assets/productive-edge-logo.svg" alt="Productive Edge logo" width="135" height="17" /></span>
             <span class="petx">Select operating-model concepts included in collaboration with Productive Edge.</span>
@@ -435,6 +547,7 @@
           <tr><td>Pro-code</td><td class="none">n/a</td><td class="none">n/a</td><td class="b-g">AI Foundry or GitHub Copilot + custom engine</td><td><a href="https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/" target="_blank" rel="noopener">Microsoft Foundry</a></td></tr>
         </tbody>
       </table>
+      <p class="mtxhint" aria-hidden="true">&larr; Swipe the table to see every rung and link &rarr;</p>
       <p class="dim f" style="font-size:13.5px;margin-top:12px;max-width:none">In the Copilot Studio Agent Academy, Recruit, Operative, and Commander are the progressive lesson tiers, beginner to advanced, which is why they map cleanly to Bronze, Silver, and Gold. Every track sits on the universal Responsible AI Pledge, and the harness choice, standard versus GitHub Copilot, appears at Silver and Gold.</p>
       <a class="daccel f" href="https://adoption.microsoft.com/en-gb/digital-accelerator/" target="_blank" rel="noopener">
         <span class="dic">&#128640;</span>
@@ -783,7 +896,7 @@
         <div class="mv"><span class="mvn">3</span><div class="mvt"><b>Bring Microsoft in alongside you.</b> We make your first 90 days faster and keep you from re-learning what others already learned the hard way.</div></div>
       </div>
       <p class="lede f" style="color:var(--ink);margin:20px auto 0"><b>The pen is yours. So is the next Maria.</b></p>
-      <p class="dim f" style="margin-top:16px;font-size:14px">Jake Gardner &nbsp;|&nbsp; Microsoft AI Business Solutions &nbsp;|&nbsp; jakegardner@microsoft.com</p>
+      <p class="dim f" style="margin-top:16px;font-size:14px"><a href="https://www.linkedin.com/in/jake-gardner-24709054/" target="_blank" rel="noopener" style="color:var(--ink);font-weight:600" aria-label="Jake Gardner on LinkedIn (opens in a new tab)">Jake Gardner</a> &nbsp;|&nbsp; Microsoft AI Business Solutions &nbsp;|&nbsp; jakegardner@microsoft.com</p>
     </div>
   </section>
 
