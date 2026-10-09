@@ -257,8 +257,11 @@
   .byline a{color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--accent)}
   .byline a:hover{color:var(--accent)}
   .byline a:focus-visible,.peattr:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-  .byline .msmark{display:flex;align-items:center;background:#fff;border-radius:8px;padding:5px 10px}
-  .byline .msmark img{display:block;height:22px;width:auto}
+  .byline .msmark,.covertop .msmark{display:flex;align-items:center;background:#fff;border-radius:8px;padding:5px 10px}
+  .byline .msmark img,.covertop .msmark img{display:block;height:24px;width:auto}
+  .cover-wrap{align-self:stretch;display:flex;flex-direction:column;min-height:100%}
+  .cover-wrap .cover{margin:auto 0;width:100%;min-height:0}
+  .covertop{display:flex;align-items:center;margin:2px 0 0}
 
   /* subtle source note */
   .srcnote{margin-top:16px;font-size:12px;color:var(--faint);max-width:none}
@@ -406,14 +409,16 @@
 
   <!-- 1 COVER -->
   <section class="slide" data-sec="Open" data-t="Cover">
-    <div class="in-s">
+    <div class="in-s cover-wrap">
+      <div class="covertop">
+        <span class="msmark"><img src="assets/microsoft-logo.png" alt="Microsoft" width="94" height="24" /></span>
+      </div>
       <div class="cover">
         <div class="lft">
           <span class="tagpill">A Microsoft working session</span>
           <h1>The Certified <span class="grad">AI Maker</span> Framework</h1>
           <p class="lede">How to design, launch, and scale a formal, governed path that takes any employee from responsible AI user to trusted maker, across Power Apps, Copilot Studio, M365 Copilot, and beyond.</p>
           <div class="byline">
-            <span class="msmark"><img src="assets/microsoft-logo.png" alt="Microsoft" width="85" height="22" /></span>
             <span><a href="https://www.linkedin.com/in/jake-gardner-24709054/" target="_blank" rel="noopener" aria-label="Jake Gardner on LinkedIn (opens in a new tab)">Jake Gardner</a> &nbsp;|&nbsp; Microsoft AI Business Solutions</span>
           </div>
           <a class="peattr" href="https://www.productiveedge.com/" target="_blank" rel="noopener">
