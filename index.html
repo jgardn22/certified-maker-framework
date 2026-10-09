@@ -235,15 +235,46 @@
   .chk li{display:flex;gap:12px;align-items:flex-start;font-size:17px}
   .chk li i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#04121f;display:grid;place-items:center;font-weight:800;font-size:14px;font-style:normal}
 
-  /* cover */
-  .cover{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);min-height:100%}
-  .cover .lft{display:flex;flex-direction:column;justify-content:center;padding-right:20px;min-width:0}
-  .cover .panel{background:var(--accent);border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;margin:6px 0}
-  .cover .tagpill{display:inline-block;background:var(--accent);color:#04121f;font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:18px;width:max-content}
-  .panel .plad{display:flex;align-items:flex-end;gap:12px;height:230px}
-  .panel .pr{width:44px;border-radius:8px 8px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;color:#04121f;font:700 11px var(--sans)}
-  .panel .cap{color:#04121f;font:700 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;opacity:.9}
-  .panel .foot{color:#04121f;font:italic 13px var(--sans);margin-top:14px;opacity:.85}
+  /* cover: warm hero card, soft sky-to-green light, floating chips (original styling) */
+  .hero{position:relative;overflow:hidden;border-radius:28px;padding:34px 48px 40px;color:#0c1a2b;
+        background:
+          radial-gradient(520px 340px at 88% 12%,rgba(76,195,255,.55),transparent 68%),
+          radial-gradient(460px 320px at 98% 78%,rgba(120,220,150,.50),transparent 66%),
+          radial-gradient(380px 260px at 4% 108%,rgba(76,195,255,.22),transparent 70%),
+          #f3f6ee;
+        box-shadow:0 40px 90px -40px rgba(0,0,0,.7)}
+  .hero-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:34px}
+  .mslock{display:flex;align-items:center;gap:14px;font:600 17px var(--sans);letter-spacing:-.01em;color:#0c1a2b}
+  .mslock .sep{width:1px;height:22px;background:#0c1a2b;opacity:.35}
+  .mslock .sub{font-weight:600;color:#33455c}
+  .hero-body{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:28px;align-items:center}
+  .hero-lft{min-width:0}
+  .hero h1{font-size:clamp(38px,5.6vw,76px);line-height:1.02;letter-spacing:-.045em;font-weight:600;margin:0 0 20px;color:#0c1a2b}
+  .hero h1 em{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;letter-spacing:-.03em;
+        background:linear-gradient(100deg,#0a72cf 0%,#0e8f9b 55%,#12905f 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+  .hero .lede{color:#33455c;max-width:56ch}
+  .hero .byline{margin-top:22px;color:#33455c}
+  .hero .byline a{color:#0c1a2b;border-bottom:2px solid #2f9bff}
+  .hero .byline a:hover{color:#0a63c5}
+  .hero .peattr .petx{color:#44546a}
+  .hero .peattr:hover .petx{color:#0c1a2b}
+  .hero .peattr .pechip{box-shadow:0 1px 0 rgba(12,26,43,.08),0 6px 16px -8px rgba(12,26,43,.35);border:1px solid rgba(12,26,43,.08)}
+
+  .hero-viz{position:relative;height:360px;min-width:0}
+  .hero-viz .vcap{position:absolute;left:0;top:0;font:700 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#33455c}
+  .chip-ui{position:absolute;display:flex;align-items:center;gap:10px;background:#fff;color:#0c1a2b;border-radius:14px;padding:10px 14px;
+        font:600 13.5px var(--sans);white-space:nowrap;box-shadow:0 1px 0 rgba(12,26,43,.06),0 14px 30px -14px rgba(12,26,43,.45);
+        animation:chipfloat 6s ease-in-out infinite}
+  .chip-ui small{font:500 11.5px var(--sans);color:#5a6b80;margin-left:2px}
+  .chip-ui i{flex:none;width:11px;height:11px;border-radius:50%;display:block}
+  .chip-ui.ck i{width:18px;height:18px;background:#1c9a5f;color:#fff;font:800 11px/18px var(--sans);text-align:center;font-style:normal}
+  .c5{left:0;top:304px;animation-delay:-4.8s}
+  .c1{left:8%;top:240px;animation-delay:-1s}
+  .c2{left:18%;top:176px;animation-delay:-2.4s}
+  .c3{left:28%;top:112px;animation-delay:-3.6s}
+  .c4{left:38%;top:48px;animation-delay:-.4s}
+  @media (max-width:1180px) and (min-width:901px){.chip-ui{font-size:12.5px;padding:9px 12px}.chip-ui small{display:none}}
+  @keyframes chipfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 
   /* productive edge attribution (cover) */
   .peattr{display:flex;align-items:center;gap:12px;margin-top:22px;text-decoration:none;width:max-content;max-width:100%}
@@ -257,11 +288,6 @@
   .byline a{color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--accent)}
   .byline a:hover{color:var(--accent)}
   .byline a:focus-visible,.peattr:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-  .byline .msmark,.covertop .msmark{display:flex;align-items:center;background:#fff;border-radius:8px;padding:5px 10px}
-  .byline .msmark img,.covertop .msmark img{display:block;height:24px;width:auto}
-  .cover-wrap{align-self:stretch;display:flex;flex-direction:column;min-height:100%}
-  .cover-wrap .cover{margin:auto 0;width:100%;min-height:0}
-  .covertop{display:flex;align-items:center;margin:2px 0 0}
 
   /* subtle source note */
   .srcnote{margin-top:16px;font-size:12px;color:var(--faint);max-width:none}
@@ -300,13 +326,18 @@
   /* ---------- mobile and touch (kept last so it wins the cascade) ---------- */
   html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .deck,.slide{max-width:100vw}
-  .in-s,.two>*,.grid>*,.cover .lft{min-width:0}
+  .in-s,.two>*,.grid>*,.hero-lft,.hero-viz{min-width:0}
   h1,h2,h3,p,li,td,th,a{overflow-wrap:anywhere}
 
   @media (max-width:900px){
-    .cover{grid-template-columns:minmax(0,1fr)}
-    .cover .panel{display:none}
-    .cover .lft{padding-right:0}
+    .hero{padding:26px 26px 30px;border-radius:24px}
+    .hero-top{margin-bottom:22px}
+    .hero-body{grid-template-columns:minmax(0,1fr);gap:22px}
+    .hero-viz{height:auto;display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+    .hero-viz .vcap{position:static;margin-bottom:2px}
+    .hero-viz .chip-ui{position:static;animation:none}
+    .hero-viz .c5{order:1}.hero-viz .c1{order:2}.hero-viz .c2{order:3}.hero-viz .c3{order:4}.hero-viz .c4{order:5}
+    .hero-viz .chip-ui.c2{margin-left:14px}.hero-viz .chip-ui.c3{margin-left:28px}.hero-viz .chip-ui.c4{margin-left:42px}
   }
 
   @media (max-width:760px){
@@ -409,32 +440,31 @@
 
   <!-- 1 COVER -->
   <section class="slide" data-sec="Open" data-t="Cover">
-    <div class="in-s cover-wrap">
-      <div class="covertop">
-        <span class="msmark"><img src="assets/microsoft-logo.png" alt="Microsoft" width="94" height="24" /></span>
-      </div>
-      <div class="cover">
-        <div class="lft">
-          <span class="tagpill">A Microsoft working session</span>
-          <h1>The Certified <span class="grad">AI Maker</span> Framework</h1>
-          <p class="lede">How to design, launch, and scale a formal, governed path that takes any employee from responsible AI user to trusted maker, across Power Apps, Copilot Studio, M365 Copilot, and beyond.</p>
-          <div class="byline">
-            <span><a href="https://www.linkedin.com/in/jake-gardner-24709054/" target="_blank" rel="noopener" aria-label="Jake Gardner on LinkedIn (opens in a new tab)">Jake Gardner</a> &nbsp;|&nbsp; Microsoft AI Business Solutions</span>
-          </div>
-          <a class="peattr" href="https://www.productiveedge.com/" target="_blank" rel="noopener">
-            <span class="pechip"><img src="assets/productive-edge-logo.svg" alt="Productive Edge logo" width="135" height="17" /></span>
-            <span class="petx">Select operating-model concepts included in collaboration with Productive Edge.</span>
-          </a>
+    <div class="in-s">
+      <div class="hero">
+        <div class="hero-top">
+          <div class="mslock" aria-label="Microsoft, a working session"><span>Microsoft</span><span class="sep" aria-hidden="true"></span><span class="sub">Working session</span></div>
         </div>
-        <div class="panel">
-          <div class="cap">One ladder. Every product.</div>
-          <div class="plad">
-            <div class="pr" style="height:36%;background:#04324f;color:#cfe6ff">Novice</div>
-            <div class="pr" style="height:56%;background:#7a4a1f;color:#ffe3c2">Bronze</div>
-            <div class="pr" style="height:76%;background:#5b6a80;color:#eaf1fb">Silver</div>
-            <div class="pr" style="height:100%;background:#8a6a12;color:#fff2c9">Gold</div>
+        <div class="hero-body">
+          <div class="hero-lft">
+            <h1>The Certified <em>AI Maker</em> Framework</h1>
+            <p class="lede">How to design, launch, and scale a formal, governed path that takes any employee from responsible AI user to trusted maker, across Power Apps, Copilot Studio, M365 Copilot, and beyond.</p>
+            <div class="byline">
+              <span><a href="https://www.linkedin.com/in/jake-gardner-24709054/" target="_blank" rel="noopener" aria-label="Jake Gardner on LinkedIn (opens in a new tab)">Jake Gardner</a> &nbsp;|&nbsp; Microsoft AI Business Solutions</span>
+            </div>
+            <a class="peattr" href="https://www.productiveedge.com/" target="_blank" rel="noopener">
+              <span class="pechip"><img src="assets/productive-edge-logo.svg" alt="Productive Edge logo" width="135" height="17" /></span>
+              <span class="petx">Select operating-model concepts included in collaboration with Productive Edge.</span>
+            </a>
           </div>
-          <div class="foot">Novice &rarr; Bronze &rarr; Silver &rarr; Gold</div>
+          <div class="hero-viz" role="img" aria-label="One ladder for every product: sign the Pledge, then Novice, Bronze, Silver, Gold">
+            <div class="vcap">One ladder. Every product.</div>
+            <div class="chip-ui c5 ck"><i>&#10003;</i>Sign the Pledge <small>Step zero</small></div>
+            <div class="chip-ui c1"><i style="background:#6b7686"></i>Novice <small>personal sandbox</small></div>
+            <div class="chip-ui c2"><i style="background:#c07a37"></i>Bronze <small>team environment</small></div>
+            <div class="chip-ui c3"><i style="background:#9aa8bd"></i>Silver <small>managed dev and test</small></div>
+            <div class="chip-ui c4"><i style="background:#d8ab34"></i>Gold <small>production rights</small></div>
+          </div>
         </div>
       </div>
     </div>
