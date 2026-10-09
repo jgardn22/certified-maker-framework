@@ -31,8 +31,6 @@
        padding:0 22px;z-index:20;font-size:13px;color:var(--dim)}
   .top .brand{font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
   .top .brand span{color:var(--accent)}
-  .top .ms{margin-left:auto;display:flex;gap:4px;opacity:.85}
-  .top .ms i{width:9px;height:9px;display:block}
   .bar{position:fixed;left:0;right:0;bottom:0;height:calc(var(--bar) + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);z-index:20;display:flex;align-items:center;gap:12px;
        padding:0 16px;background:rgba(11,15,23,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
   .bar button{background:var(--bg3);border:1px solid var(--line);color:var(--ink);border-radius:9px;
@@ -246,6 +244,7 @@
   .hero-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:34px}
   .mslock{display:flex;align-items:center;gap:14px;font:600 17px var(--sans);letter-spacing:-.01em;color:#0c1a2b}
   .mslock .sep{width:1px;height:22px;background:#0c1a2b;opacity:.35}
+  .mslock .mslogo{display:block;height:30px;width:auto}
   .mslock .sub{font-weight:600;color:#33455c}
   .hero-body{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:28px;align-items:center}
   .hero-lft{min-width:0}
@@ -433,7 +432,6 @@
 
 <div class="top">
   <a class="brand" href="#1">Certified <span>AI Maker</span> Framework</a>
-  <span class="ms" aria-hidden="true"><i style="background:#f25022"></i><i style="background:#7fba00"></i><i style="background:#00a4ef"></i><i style="background:#ffb900"></i></span>
 </div>
 
 <div class="deck" id="deck">
@@ -443,7 +441,7 @@
     <div class="in-s">
       <div class="hero">
         <div class="hero-top">
-          <div class="mslock" aria-label="Microsoft, a working session"><span>Microsoft</span><span class="sep" aria-hidden="true"></span><span class="sub">Working session</span></div>
+          <div class="mslock"><img class="mslogo" src="assets/microsoft-logo.png" alt="Microsoft" width="116" height="30" /><span class="sep" aria-hidden="true"></span><span class="sub">Working session</span></div>
         </div>
         <div class="hero-body">
           <div class="hero-lft">
